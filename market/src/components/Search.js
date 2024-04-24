@@ -1,0 +1,51 @@
+import React, { useState } from "react";
+import { Text, View, StyleSheet, TextInput } from "react-native";
+
+const Search = () => {
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleChangeText = (text) => {
+    setSearchValue(text);
+  };
+  console.log(searchValue);
+  return (
+    <View style={styles.container}>
+      <View style={styles.innerContainer}>
+        <TextInput
+          style={styles.inputText}
+          placeholder="Search"
+          value={searchValue}
+          onChangeText={handleChangeText}
+        />
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    height: 50,
+    marginTop: 32,
+    paddingHorizontal: 16,
+  },
+  innerContainer: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "center",
+    backgroundColor: "#E8E8E8",
+    paddingHorizontal: 16,
+    borderRadius: 25,
+    borderWidth: 1,
+    borderColor: "#E8E8E8",
+  },
+  inputText: {
+    flex: 1,
+    color: "#BDBDBD",
+    fontSize: 16,
+    fontStyle: "normal",
+    fontWeight: "500",
+  },
+});
+
+export default Search;
